@@ -10,7 +10,7 @@ void Dode::rotating_sectors(char *data)
   uint8_t brightness = data[1];
   uint8_t input_period = data[2];//*100ms
   uint8_t input_offset = data[3];//255 =360 degrees
-  uint8_t nr_of_sectors = data[4];
+  uint8_t nr_of_sectors = data[4]; 
   uint8_t input_width = data[5];//255 =360 degrees
 
   float offset = input_offset/255.0*2.0*PI; //radians
