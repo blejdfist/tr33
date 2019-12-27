@@ -8,53 +8,55 @@
 
 #define HW_STRIP_COUNT 10
 #define HW_STRIP_PIXEL_COUNT 260
-#define HW_STRIP_PIN_0 4
-#define HW_STRIP_PIN_1 5
-#define HW_STRIP_PIN_2 21
-#define HW_STRIP_PIN_3 23
-#define HW_STRIP_PIN_4 15
 
-#define HW_STRIP_PIN_5 18
-#define HW_STRIP_PIN_6 19
-#define HW_STRIP_PIN_7 22
-#define HW_STRIP_PIN_8 13
-#define HW_STRIP_PIN_9 12
+// unten
+#define HW_STRIP_PIN_0 13//18
+#define HW_STRIP_PIN_1 27//4
+#define HW_STRIP_PIN_2 25
+#define HW_STRIP_PIN_3 4//27
+#define HW_STRIP_PIN_4 18//13
+
+#define HW_STRIP_PIN_5 14//15
+#define HW_STRIP_PIN_6 26//5
+#define HW_STRIP_PIN_7 12
+#define HW_STRIP_PIN_8 5//26
+#define HW_STRIP_PIN_9 15//14
 
 extern CRGB edge_leds[HW_STRIP_COUNT][HW_STRIP_PIXEL_COUNT];
 
 #define EDGE_COUNT 30
 #define CORNER_COUNT 20
 #define EDGE_MAX_LENGTH 90
-#define NR_LEDS_EDGE_01 84
-#define NR_LEDS_EDGE_02 80
-#define NR_LEDS_EDGE_03 85
-#define NR_LEDS_EDGE_04 84
-#define NR_LEDS_EDGE_05 77
-#define NR_LEDS_EDGE_06 82
-#define NR_LEDS_EDGE_07 81
-#define NR_LEDS_EDGE_08 78
-#define NR_LEDS_EDGE_09 82
-#define NR_LEDS_EDGE_10 83
-#define NR_LEDS_EDGE_11 78
-#define NR_LEDS_EDGE_12 83
-#define NR_LEDS_EDGE_13 79
-#define NR_LEDS_EDGE_14 79
-#define NR_LEDS_EDGE_15 81
-#define NR_LEDS_EDGE_16 84
-#define NR_LEDS_EDGE_17 82
-#define NR_LEDS_EDGE_18 76
-#define NR_LEDS_EDGE_19 83
-#define NR_LEDS_EDGE_20 84
-#define NR_LEDS_EDGE_21 79
-#define NR_LEDS_EDGE_22 82
-#define NR_LEDS_EDGE_23 84
-#define NR_LEDS_EDGE_24 78
-#define NR_LEDS_EDGE_25 81
-#define NR_LEDS_EDGE_26 85
-#define NR_LEDS_EDGE_27 79
-#define NR_LEDS_EDGE_28 81
-#define NR_LEDS_EDGE_29 83
-#define NR_LEDS_EDGE_30 81
+#define NR_LEDS_EDGE_01 84 -3
+#define NR_LEDS_EDGE_02 80 -2
+#define NR_LEDS_EDGE_03 85 -1
+#define NR_LEDS_EDGE_04 84 -7
+#define NR_LEDS_EDGE_05 77 -0
+#define NR_LEDS_EDGE_06 82 -1
+#define NR_LEDS_EDGE_07 81 +2
+#define NR_LEDS_EDGE_08 78 +0
+#define NR_LEDS_EDGE_09 82 +0
+#define NR_LEDS_EDGE_10 83 +0
+#define NR_LEDS_EDGE_11 78 -2
+#define NR_LEDS_EDGE_12 83 +1
+#define NR_LEDS_EDGE_13 79 +0
+#define NR_LEDS_EDGE_14 79 -1
+#define NR_LEDS_EDGE_15 81 +2
+#define NR_LEDS_EDGE_16 84 -2
+#define NR_LEDS_EDGE_17 82 +2
+#define NR_LEDS_EDGE_18 76 -2
+#define NR_LEDS_EDGE_19 83 +0
+#define NR_LEDS_EDGE_20 84 +0
+#define NR_LEDS_EDGE_21 79 +0
+#define NR_LEDS_EDGE_22 82 +0
+#define NR_LEDS_EDGE_23 84 +0
+#define NR_LEDS_EDGE_24 78 +0
+#define NR_LEDS_EDGE_25 81 -1
+#define NR_LEDS_EDGE_26 85 +0
+#define NR_LEDS_EDGE_27 79 +0
+#define NR_LEDS_EDGE_28 81 +2
+#define NR_LEDS_EDGE_29 83 -1
+#define NR_LEDS_EDGE_30 81 -0
 #define NR_TOTAL_LEDS (NR_LEDS_EDGE_01 + NR_LEDS_EDGE_02 + NR_LEDS_EDGE_03 + NR_LEDS_EDGE_04 + NR_LEDS_EDGE_05 + NR_LEDS_EDGE_06 + NR_LEDS_EDGE_07 + NR_LEDS_EDGE_08 + NR_LEDS_EDGE_09 + NR_LEDS_EDGE_10 + NR_LEDS_EDGE_11 + NR_LEDS_EDGE_12 + NR_LEDS_EDGE_13 + NR_LEDS_EDGE_14 + NR_LEDS_EDGE_15 + NR_LEDS_EDGE_16 + NR_LEDS_EDGE_17 + NR_LEDS_EDGE_18 + NR_LEDS_EDGE_19 + NR_LEDS_EDGE_20 + NR_LEDS_EDGE_21 + NR_LEDS_EDGE_22 + NR_LEDS_EDGE_23 + NR_LEDS_EDGE_24 + NR_LEDS_EDGE_25 + NR_LEDS_EDGE_26 + NR_LEDS_EDGE_27 + NR_LEDS_EDGE_28 + NR_LEDS_EDGE_29 + NR_LEDS_EDGE_30)
 struct Coordinates
 {
@@ -71,42 +73,43 @@ extern Coordinates coordinates[NR_TOTAL_LEDS];
 #define COORDINATES_MAX_R 1.40125854
 #define COORDINATES_MIN_R 1.11351636
 
+// {strip_index, start_led, end_led}
 static uint16_t edges[EDGE_COUNT][3] = {
     {0, 0, NR_LEDS_EDGE_01},
-    {0, 84, NR_LEDS_EDGE_02},
-    {0, 164, NR_LEDS_EDGE_03},
+    {0, NR_LEDS_EDGE_01, NR_LEDS_EDGE_02},
+    {0, NR_LEDS_EDGE_01 + NR_LEDS_EDGE_02, NR_LEDS_EDGE_03},
     {1, 0, NR_LEDS_EDGE_04},
-    {1, 84, NR_LEDS_EDGE_05},
+    {1, NR_LEDS_EDGE_04, NR_LEDS_EDGE_05},
 
-    {1, 161, NR_LEDS_EDGE_06},
+    {1, NR_LEDS_EDGE_04 + NR_LEDS_EDGE_05, NR_LEDS_EDGE_06},
     {2, 0, NR_LEDS_EDGE_07},
-    {2, 81, NR_LEDS_EDGE_08},
-    {2, 159, NR_LEDS_EDGE_09},
+    {2, NR_LEDS_EDGE_07, NR_LEDS_EDGE_08},
+    {2, NR_LEDS_EDGE_07 + NR_LEDS_EDGE_08, NR_LEDS_EDGE_09},
     {3, 0, NR_LEDS_EDGE_10},
 
-    {3, 83, NR_LEDS_EDGE_11},
-    {3, 161, NR_LEDS_EDGE_12},
+    {3, NR_LEDS_EDGE_10, NR_LEDS_EDGE_11},
+    {3, NR_LEDS_EDGE_10 + NR_LEDS_EDGE_11, NR_LEDS_EDGE_12},
     {4, 0, NR_LEDS_EDGE_13},
-    {4, 79, NR_LEDS_EDGE_14},
-    {4, 158, NR_LEDS_EDGE_15},
+    {4, NR_LEDS_EDGE_13, NR_LEDS_EDGE_14},
+    {4, NR_LEDS_EDGE_13 + NR_LEDS_EDGE_14, NR_LEDS_EDGE_15},
 
     {5, 0, NR_LEDS_EDGE_16},
-    {5, 84, NR_LEDS_EDGE_17},
-    {5, 166, NR_LEDS_EDGE_18},
+    {5, NR_LEDS_EDGE_16, NR_LEDS_EDGE_17},
+    {5, NR_LEDS_EDGE_16  + NR_LEDS_EDGE_17, NR_LEDS_EDGE_18},
     {6, 0, NR_LEDS_EDGE_19},
-    {6, 83, NR_LEDS_EDGE_20},
+    {6, NR_LEDS_EDGE_19, NR_LEDS_EDGE_20},
 
-    {6, 167, NR_LEDS_EDGE_21},
+    {6, NR_LEDS_EDGE_19 + NR_LEDS_EDGE_20, NR_LEDS_EDGE_21},
     {7, 0, NR_LEDS_EDGE_22},
-    {7, 82, NR_LEDS_EDGE_23},
-    {7, 166, NR_LEDS_EDGE_24},
+    {7, NR_LEDS_EDGE_22, NR_LEDS_EDGE_23},
+    {7, NR_LEDS_EDGE_22 + NR_LEDS_EDGE_23, NR_LEDS_EDGE_24},
     {8, 0, NR_LEDS_EDGE_25},
 
-    {8, 81, NR_LEDS_EDGE_26},
-    {8, 166, NR_LEDS_EDGE_27},
+    {8, NR_LEDS_EDGE_25, NR_LEDS_EDGE_26},
+    {8, NR_LEDS_EDGE_25 + NR_LEDS_EDGE_26, NR_LEDS_EDGE_27},
     {9, 0, NR_LEDS_EDGE_28},
-    {9, 81, NR_LEDS_EDGE_29},
-    {9, 164, NR_LEDS_EDGE_30}};
+    {9, NR_LEDS_EDGE_28, NR_LEDS_EDGE_29},
+    {9, NR_LEDS_EDGE_28 + NR_LEDS_EDGE_29, NR_LEDS_EDGE_30}};
 
 struct EdgeCorner
 {
@@ -117,7 +120,43 @@ struct EdgeCorner
 };
 
 static EdgeCorner corners[EDGE_COUNT] = {
-    {-13, 14, 4, 2},
+    // {5, -4, 13, 2},
+    // {-1, 13, 16, 3},
+    // {-2, 16, 20, -19},
+    // {8, -7, 1, 5},
+    // {-4, 1, 19, 6},
+
+    // {-5, 19, 23, -22},
+    // {11, -10, 4, 8},
+    // {-7, 4, 22,9},
+    // {-8, 22, 26, -25},
+    // {25, -24, 7, 11},
+
+    // {-10, 7, 25, 12},
+    // {-11, 25, 29, -28},
+    // {2, -1, 10, 14},
+    // {-13, 10, 28, 15},
+    // {-14, 28, 17, -16},
+
+    // {3, -2, -15, 17},
+    // {-16, -15, -30, 18},
+    // {-17, -30, 21, -20},
+    // {6, -5, -3, 20},
+    // {-19, -3, -18, 21},
+    
+    // {-20, 18, 24, -23},
+    // {9, -8, -6, 23},
+    // {-22, -6, 24, -21},
+    // {-23, -21, 27, -26},
+    // {12, -11, -9, 26},
+
+    // {-25, -9, -24, 27},
+    // {-26, -24, 30, -29},
+    // {15, -14, -12, 29},
+    // {-28, -12, -27, 30},
+    // {-29, -27, 18, -17}};
+
+   {-13, 14, 4, 2},
     {4, -1, 16, 3},
     {16, -2, 29, -28},
     {-1, 2, 7, 5},

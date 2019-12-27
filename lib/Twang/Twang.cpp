@@ -36,7 +36,7 @@ int running_total_leds[] = {
         // NR_LEDS_EDGE_19 + NR_LEDS_EDGE_09,
 
         //NR_LEDS_EDGE_19 + NR_LEDS_EDGE_09 + NR_LEDS_EDGE_22,
-        NR_LEDS_EDGE_22,A
+        NR_LEDS_EDGE_22,
 
         //NR_LEDS_EDGE_19 + NR_LEDS_EDGE_09 + NR_LEDS_EDGE_22 + NR_LEDS_EDGE_12,
         NR_LEDS_EDGE_22 + NR_LEDS_EDGE_12,
